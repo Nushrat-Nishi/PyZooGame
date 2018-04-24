@@ -2,7 +2,7 @@
 import pygame
 from pygame.locals import *
 
-# 2 - Initialize the game
+# 2 - Initialize the pyZoo
 pygame.init()
 width, height = 1000, 700
 screen=pygame.display.set_mode((width, height))
@@ -46,7 +46,7 @@ while 1:
         print("pygame.QUIT value: ", pygame.QUIT)
         # check if the event is the X button
         if event.type==pygame.QUIT:
-            # if it is quit the game
+            # if it is quit the pyZoo
             pygame.quit()
             exit(0)
 

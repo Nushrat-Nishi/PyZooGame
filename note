@@ -10,40 +10,12 @@ import pygame
 
 
 
-# 5 - clear the screen before drawing it again
-screen.fill(0)
-
-# 6 - draw the screen elements
-screen.blit(cat, (0,0))
-screen.blit(dog, (100,0))
-screen.blit(dolphin, (200,0))
-screen.blit(duck, (300,0))
-screen.blit(horse, (400,0))
-screen.blit(lion, (500,0))
-screen.blit(pigeon, (600,0))
-screen.blit(rabbit, (700,0))
-screen.blit(swan, (800,0))
-screen.blit(tiger, (900,0))
-
-# 4 - keep looping through
-while 1:
-
-
-    # 7 - update the screen
-    pygame.display.flip()
-    # 8 - loop through the events
-    for event in pygame.event.get():
-        print("event valu: ",event.type)
-        # check if the event is the X button
-        if event.type==pygame.QUIT:
-            # if it is quit the game
-            pygame.quit()
-            exit(0)
-
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                screen.fill(0)
-                screen.blit(cat, (100, 100))
-            if event.key == pygame.K_RIGHT:
-                screen.fill(0)
-                screen.blit(dog, (500, 100))
+ if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    white = (255, 255, 255)
+                    screen.fill(white)
+                    screen.blit(matrix[random_index_x][random_index_y], (x-100, y))
+                if event.key == pygame.K_RIGHT:
+                    white = (255, 255, 255)
+                    screen.fill(white)
+                    screen.blit(matrix[random_index_x][random_index_y], (x+100, y))
