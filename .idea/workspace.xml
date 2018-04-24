@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7a99dca-6992-4e05-979c-ed70e26e091f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyZoo/moveLeftRight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyZoo/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/drawMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyZoo/drawMain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyZoo/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/moveLeftRight.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note" beforeDir="false" afterPath="$PROJECT_DIR$/note" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyZoo/drawMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyZoo/drawMain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyZoo/moveLeftRight.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyZoo/moveLeftRight.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +20,7 @@
     <SUITE FILE_PATH="coverage/PyZooGame$rough.coverage" NAME="rough Coverage Results" MODIFIED="1524559637130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
     <SUITE FILE_PATH="coverage/PyBunnyGame$rough.coverage" NAME="rough Coverage Results" MODIFIED="1524469286737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
     <SUITE FILE_PATH="coverage/PyZooGame$game__1_.coverage" NAME="game (1) Coverage Results" MODIFIED="1524609515247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyZoo" />
-    <SUITE FILE_PATH="coverage/PyZooGame$moveLeftRight__1_.coverage" NAME="moveLeftRight (1) Coverage Results" MODIFIED="1524610456937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyZoo" />
+    <SUITE FILE_PATH="coverage/PyZooGame$moveLeftRight__1_.coverage" NAME="moveLeftRight (1) Coverage Results" MODIFIED="1524613171226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyZoo" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -54,8 +48,8 @@
       <file leaf-file-name="drawMain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyZoo/drawMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="853">
-              <caret line="102" column="59" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
+            <state relative-caret-position="-2">
+              <caret line="65" column="37" lean-forward="true" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
               <folding>
                 <element signature="e#21#34#0" expanded="true" />
               </folding>
@@ -66,8 +60,8 @@
       <file leaf-file-name="moveLeftRight.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pyZoo/moveLeftRight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="84" lean-forward="true" selection-start-line="8" selection-start-column="84" selection-end-line="8" selection-end-column="84" />
+            <state relative-caret-position="60">
+              <caret line="4" column="62" lean-forward="true" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -98,6 +92,7 @@
       <find>event</find>
       <find>screen</find>
       <find>print</find>
+      <find>drawAnimal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,9 +105,9 @@
         <option value="$PROJECT_DIR$/game/rough.py" />
         <option value="$PROJECT_DIR$/game/drawMain.py" />
         <option value="$PROJECT_DIR$/game/moveLeftRight.py" />
-        <option value="$PROJECT_DIR$/pyZoo/moveLeftRight.py" />
         <option value="$PROJECT_DIR$/note" />
         <option value="$PROJECT_DIR$/pyZoo/drawMain.py" />
+        <option value="$PROJECT_DIR$/pyZoo/moveLeftRight.py" />
       </list>
     </option>
   </component>
@@ -367,7 +362,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1177394" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21522693" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -589,8 +584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pyZoo/drawMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="853">
-          <caret line="102" column="59" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
+        <state relative-caret-position="-2">
+          <caret line="65" column="37" lean-forward="true" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
           <folding>
             <element signature="e#21#34#0" expanded="true" />
           </folding>
@@ -599,8 +594,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pyZoo/moveLeftRight.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="84" lean-forward="true" selection-start-line="8" selection-start-column="84" selection-end-line="8" selection-end-column="84" />
+        <state relative-caret-position="60">
+          <caret line="4" column="62" lean-forward="true" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

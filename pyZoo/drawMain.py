@@ -37,33 +37,20 @@ class Drawing:
     def drawingWhiteBoard(self):
         # 2 - Initialize the pyZoo
         pygame.init()
-        width, height = 1000, 700
-        screen=pygame.display.set_mode((width, height))
+        self.width, self.height = 1000, 700
+        screen=pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption('PyZooGame')
 
         # 5 - clear the screen before drawing it again
-        white = (255, 255, 255)
-        screen.fill(white)
         return screen
 
-    def drawAnimalList(self, screen, matrix, random_index_x, random_index_y, x, y):
+    def drawAnimalWithKeyEvents(self, screen, matrix, random_index_x, random_index_y):
 
-        screen.blit(matrix[0][0], (0, 0))
-        screen.blit(matrix[0][1], (100, 0))
-        screen.blit(matrix[0][2], (200, 0))
-        screen.blit(matrix[0][3], (300, 0))
-        screen.blit(matrix[0][4], (400, 0))
-        screen.blit(matrix[0][5], (500, 0))
-        screen.blit(matrix[0][6], (600, 0))
-        screen.blit(matrix[0][7], (700, 0))
-        screen.blit(matrix[0][8], (800, 0))
-        screen.blit(matrix[0][9], (900, 0))
-        screen.blit(matrix[random_index_x][random_index_y], (x, y))
+        x = self.width*0.45
+        y = self.height*0.8
+
+        x_change = 0
         while 1:
-            #pygame.display.flip()
-            pygame.display.update()
-
-
             # 8 - loop through the events
             for event in pygame.event.get():
                 # check if the event is the X button
@@ -75,49 +62,35 @@ class Drawing:
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_LEFT:
-                        white = (255, 255, 255)
-                        screen.fill(white)
-                        screen.blit(matrix[0][0], (0, 0))
-                        screen.blit(matrix[0][1], (100, 0))
-                        screen.blit(matrix[0][2], (200, 0))
-                        screen.blit(matrix[0][3], (300, 0))
-                        screen.blit(matrix[0][4], (400, 0))
-                        screen.blit(matrix[0][5], (500, 0))
-                        screen.blit(matrix[0][6], (600, 0))
-                        screen.blit(matrix[0][7], (700, 0))
-                        screen.blit(matrix[0][8], (800, 0))
-                        screen.blit(matrix[0][9], (900, 0))
-                        screen.blit(matrix[random_index_x][random_index_y], (x-100, y))
+                        x_change = -1
+
                     if event.key == pygame.K_RIGHT:
-                        white = (255, 255, 255)
-                        screen.fill(white)
-                        screen.blit(matrix[0][0], (0, 0))
-                        screen.blit(matrix[0][1], (100, 0))
-                        screen.blit(matrix[0][2], (200, 0))
-                        screen.blit(matrix[0][3], (300, 0))
-                        screen.blit(matrix[0][4], (400, 0))
-                        screen.blit(matrix[0][5], (500, 0))
-                        screen.blit(matrix[0][6], (600, 0))
-                        screen.blit(matrix[0][7], (700, 0))
-                        screen.blit(matrix[0][8], (800, 0))
-                        screen.blit(matrix[0][9], (900, 0))
-                        screen.blit(matrix[random_index_x][random_index_y], (x+100, y))
+                        x_change = 1
+
+                if event.type == pygame.KEYUP:
+                    if event.key ==pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                        x_change = 0
+
+            x += x_change
+            white = (255, 255, 255)
+            screen.fill(white)
+            self.drawAnimalFromMatrix(screen, matrix, random_index_x, random_index_y, x, y)
+            pygame.display.update()
 
 
+    def drawAnimalFromMatrix(self, screen, matrix, random_index_x, random_index_y, x, y):
+        screen.blit(matrix[0][0], (0, 0))
+        screen.blit(matrix[0][1], (100, 0))
+        screen.blit(matrix[0][2], (200, 0))
+        screen.blit(matrix[0][3], (300, 0))
+        screen.blit(matrix[0][4], (400, 0))
+        screen.blit(matrix[0][5], (500, 0))
+        screen.blit(matrix[0][6], (600, 0))
+        screen.blit(matrix[0][7], (700, 0))
+        screen.blit(matrix[0][8], (800, 0))
+        screen.blit(matrix[0][9], (900, 0))
+        screen.blit(matrix[random_index_x][random_index_y], (x, y))
 
-    def drawPlayer(self, screen, matrix, random_index_x, random_index_y, x, y):
-        #while 1:
-        self.drawAnimalList(screen, matrix, random_index_x, random_index_y, x, y)
-        pygame.display.update()
-
-        for event in pygame.event.get():
-            print("event.type value: ", event.type)
-            print("pygame.QUIT value: ", pygame.QUIT)
-            # check if the event is the X button
-            if event.type==pygame.QUIT:
-                # if it is quit the pyZoo
-                pygame.quit()
-                exit(0)
 
 
 
