@@ -1,6 +1,7 @@
 # 1 - Import library
 import pygame
 import random
+import time
 
 from pygame.locals import *
 
@@ -38,34 +39,36 @@ class Drawing:
         # 2 - Initialize the pyZoo
         pygame.init()
         self.width, self.height = 1000, 700
-        screen=pygame.display.set_mode((self.width, self.height))
+        self.screen=pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption('PyZooGame')
+        self.clock = pygame.time.Clock()
+        self.animal_wodth = 100
 
         # 5 - clear the screen before drawing it again
-        return screen
+        #return screen
 
-    def drawAnimalWithKeyEvents(self, screen, matrix, random_index_x, random_index_y):
+    def drawAnimalWithKeyEvents(self,  matrix, random_index_x, random_index_y):
 
         x = self.width*0.45
         y = self.height*0.8
-
         x_change = 0
-        while 1:
+
+        gameExit = False
+
+        while not gameExit:
             # 8 - loop through the events
             for event in pygame.event.get():
                 # check if the event is the X button
                 if event.type == pygame.QUIT:
-                    # if it is quit the pyZoo
                     pygame.quit()
                     quit()
-                    exit(0)
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_LEFT:
-                        x_change = -1
+                        x_change = -2
 
                     if event.key == pygame.K_RIGHT:
-                        x_change = 1
+                        x_change = 2
 
                 if event.type == pygame.KEYUP:
                     if event.key ==pygame.K_LEFT or event.key == pygame.K_RIGHT:
@@ -73,9 +76,40 @@ class Drawing:
 
             x += x_change
             white = (255, 255, 255)
-            screen.fill(white)
-            self.drawAnimalFromMatrix(screen, matrix, random_index_x, random_index_y, x, y)
+            self.screen.fill(white)
+            self.drawAnimalFromMatrix(self.screen, matrix, random_index_x, random_index_y, x, y)
+
+            if x>self.width-self.animal_wodth or x<0:
+                #gameExit = True
+                self.crash()
+
+
             pygame.display.update()
+            self.clock.tick(100)
+
+
+    def message_display(self, text):
+        largeText = pygame.font.Font('freesansbold.ttf', 115)
+        TextSurf, TextRect = self.text_objects(text, largeText)
+        TextRect.center = ((self.width/2), (self.height/2))
+
+        white = (255, 255, 255)
+        self.screen.fill(white)
+        self.screen.blit(TextSurf, TextRect)
+
+        pygame.display.update()
+        time.sleep(2)
+
+
+
+    def text_objects(self, text, font):
+        black = (0, 0, 0)
+        textSurface = font.render(text, True, black)
+        return textSurface, textSurface.get_rect()
+
+
+    def crash(self):
+        self.message_display('You crashed')
 
 
     def drawAnimalFromMatrix(self, screen, matrix, random_index_x, random_index_y, x, y):
