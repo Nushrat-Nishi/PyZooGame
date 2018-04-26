@@ -67,7 +67,9 @@ class Drawing:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_LEFT:
                         if x < 0:
+                            print("x : ", x_change, x)
                             x_change = 0
+                            print("x_change: ", x_change)
                         else:
                             print("x_change min & x: ", x_change, x)
                             x_change = -2
@@ -78,30 +80,14 @@ class Drawing:
                         else:
                             x_change = 2
 
-                    if event.key == pygame.K_UP:
-                        if y<0:
-                            y_change = 0
-                        else:
-                            y_change = -2
-
-                    if event.key == pygame.K_DOWN:
-                        if y> self.height+20:
-                            y_change = 0
-                        else:
-                            y_change = 2
+                    if event.type == pygame.K_UP:
+                        print("pygame.K_UP y:", y)
+                        y_change = -2
 
 
                 if event.type == pygame.KEYUP:
                     if event.key ==pygame.K_LEFT or event.key == pygame.K_RIGHT:
                         x_change = 0
-
-                    if event.key ==pygame.K_UP or event.key == pygame.K_DOWN:
-                        if y < 0 or y> self.height-200:
-                            y_change = 0
-                        else:
-                            y_change = 2
-                            print("y=: ",y)
-
 
             x += x_change
             y += y_change
